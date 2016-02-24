@@ -29,4 +29,6 @@ scc$all_text <- paste(scc$Short.Name, scc$SCC.Level.One, scc$SCC.Level.Two,
 scc.comb.coal.lg<- grepl("combustion", scc$all_text, ignore.case = TRUE) &
                 grepl("coal", scc$all_text, ignore.case = TRUE)
 pm25.comb.coal <- subset(pm25, pm25$SCC %in% scc[scc.comb.coal.lg,]$SCC)
+pm25.comb.coal.yearly <- tapply(pm25$Emissions,pm25$year, sum, na.rm=TRUE)
+barplot(pm25.comb.coal.yearly)
 
