@@ -28,5 +28,5 @@ scc$all_text <- paste(scc$Short.Name, scc$SCC.Level.One, scc$SCC.Level.Two,
 
 scc.comb.coal.lg<- grepl("combustion", scc$all_text, ignore.case = TRUE) &
                 grepl("coal", scc$all_text, ignore.case = TRUE)
-pm25.com.coal <- subset(pm25, pm25$SCC %in% scc[scc.comb.coal.lg,]$SCC)
+pm25.comb.coal <- subset(pm25, pm25$SCC %in% scc[scc.comb.coal.lg,]$SCC)
 
