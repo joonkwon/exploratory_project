@@ -28,13 +28,16 @@ pm25_la_veh_tot <- tapply(pm25_la_veh$Emissions, pm25_la_veh$year, sum, na.rm=TR
 
 
 # plot it
+par(mfrow=c(1,2), mar=c(4,5,2,2), oma=c(0,0,3,0))
 color <- rgb(0,0,1, alpha=0.3)
-barplot(pm25_bal_veh_tot, col=color, xlab="Year", ylab="Vehicle Emission (ton)", 
-        border="red", main="Vehicle Emission in Baltimore")
+barplot(pm25_bal_veh_tot, col=color, xlab="Baltimore", ylab="PM25 Emission (ton)", 
+        border="red")
+model <- 
+barplot(pm25_la_veh_tot, col=color, xlab="LA",  
+        border="red")
 
-barplot(pm25_ca_veh_tot, col=color, xlab="Year", ylab="Vehicle PM25 Emission (ton)", 
-        border="red", main="Vehicle PM25 Emission in California")
+mtext("Yearly PM25 Emission from Vehicle", cex=1.5, outer=TRUE)
 
 # save as png file
-dev.copy(png, filename="plot6.png", width=480, height=480)
+dev.copy(png, filename="plot6.png", width=600, height=480)
 dev.off()

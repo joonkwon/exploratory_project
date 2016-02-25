@@ -23,8 +23,8 @@ pm25_bal_veh_tot <- tapply(pm25_bal_veh$Emissions, pm25_bal_veh$year, sum, na.rm
 
 # plot it
 color <- rgb(0,0,1, alpha=0.3)
-barplot(pm25_bal_veh_tot, col=color, xlab="Year", ylab="Vehicle Emission (ton)", 
-        border="red", main="Vehicle Emission in Baltimore")
+barplot(pm25_bal_veh_tot, col=color, xlab="Year", ylab="PM2.5 Emission (ton)", 
+        border="red", main="PM2.5 Emission from Vehicle in Baltimore")
 
 # save as png file
 dev.copy(png, filename="plot5.png", width=480, height=480)

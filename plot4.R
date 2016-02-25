@@ -19,8 +19,8 @@ pm25.comb.coal.yearly <- tapply(pm25$Emissions,pm25$year, sum, na.rm=TRUE)
 
 # plot it
 color <- rgb(0,0,1, alpha=0.3)
-barplot(pm25.comb.coal.yearly, col=color, xlab="Year", ylab="Emission (ton)", 
-        border="red", main="Total Emission from Coal Combustion in US" )
+barplot(pm25.comb.coal.yearly, col=color, xlab="Year", ylab="PM2.5 Emission (ton)", 
+        border="red", main="PM2.5 Emission from Coal Combustion in US" )
 
 # save as png file
 dev.copy(png, filename="plot4.png", width=480, height=480)

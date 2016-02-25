@@ -18,7 +18,7 @@ pm25_bal_sum$type <- factor(pm25_bal_sum$type)
 library(ggplot2)
 g <- ggplot(pm25_bal_sum, aes(year, sum_emission))
 g + geom_bar(stat="identity") + facet_grid(.~type) + 
-    labs(title="Total Emissions by Type in Baltimore City", y="Emission (ton)")
+    labs(title="PM2.5 Emissions by Type in Baltimore City", y="PM2.5 Emission (ton)")
 
-dev.copy(png, "plot3.png", width=480, height=480)
+dev.copy(png, "plot3.png", width=600, height=480)
 dev.off()
